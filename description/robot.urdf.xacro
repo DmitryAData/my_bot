@@ -3,6 +3,6 @@
     <!-- Вкладка "робот" со строкой сверху - это стандартное описание xacro файла -->
 
     <!-- Стандартный вид ссылки -->
-    <link name="base_link"></link>
+    <xacro:include filename="robot_core.xacro"/>
 
 </robot>

@@ -21,8 +21,8 @@ def generate_launch_description(): # Обязательный модуль фа�
     # Создаем robot_state_publisher node
     params = {'robot_description': robot_description_config.toxml(), 'use_sim_time': use_sim_time} # В параметры передаем некую конфигурацию в формате XML и результат присвоения значения use_sim_time
     node_robot_state_publisher = Node( # Создаем ноду для robot_state_publisher
-        package='robot_state_publisher', # Указываем пакет ???
-        executable='robot_state_publisher', # Указываем исполняемый фаил ???
+        package='robot_state_publisher', # Указываем пакет как в обычном запуске через терминал
+        executable='robot_state_publisher', # Указываем исполняемый фаил
         output='screen', # Выходное значение ???
         parameters=[params] # Параметры указаны над функцией
     )
