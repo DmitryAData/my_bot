@@ -8,4 +8,7 @@
     <!-- Включаем описание взаимодействия робота и Gazebo -->
     <xacro:include filename="gazebo_control.xacro"/>
 
+    <!-- Включаем описание лидара -->
+    <xacro:include filename="lidar.xacro"/>
+
 </robot>
