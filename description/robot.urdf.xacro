@@ -11,4 +11,7 @@
     <!-- Включаем описание лидара -->
     <xacro:include filename="lidar.xacro"/>
 
+    <!-- Включаем описание камеры -->
+    <xacro:include filename="camera.xacro"/>
+
 </robot>
