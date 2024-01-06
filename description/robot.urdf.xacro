@@ -2,16 +2,30 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro"  name="robot">
     <!-- Вкладка "робот" со строкой сверху - это стандартное описание xacro файла -->
 
+    <xacro:arg name="use_ros2_control" default="true"/>
+    
     <!-- Включаем описание робота -->
     <xacro:include filename="robot_core.xacro"/>
 
+    <!-- <xacro:include filename="ros2_control.xacro"/> -->
+
+    <xacro:if value="$(arg use_ros2_control)">
+        <xacro:include filename="ros2_control.xacro"/>
+    </xacro:if>
+    <xacro:unless value="$(arg use_ros2_control)">
+        <xacro:include filename="gazebo_control.xacro"/>
+    </xacro:unless>
+
     <!-- Включаем описание взаимодействия робота и Gazebo -->
-    <xacro:include filename="gazebo_control.xacro"/>
+    <!-- <xacro:include filename="gazebo_control.xacro"/> -->
 
     <!-- Включаем описание лидара -->
     <xacro:include filename="lidar.xacro"/>
 
     <!-- Включаем описание камеры -->
     <xacro:include filename="camera.xacro"/>
+
+    <!-- Включаем описание взаимодействия робота и ros2_control -->
+    <!-- <xacro:include filename="ros2_control.xacro"/> -->
 
 </robot>
