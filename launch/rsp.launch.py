@@ -18,7 +18,7 @@ def generate_launch_description(): # Обязательный модуль фа�
     pkg_path = os.path.join(get_package_share_directory('my_bot')) # Указываем пакет
     xacro_file = os.path.join(pkg_path,'description','robot.urdf.xacro') # Указываем путь к Xacro файлу
     # robot_description_config = xacro.process_file(xacro_file).toxml()  # ??? Создаем некую конфигурацию на основании xacro файла
-    robot_description_config = Command(['xacro ', xacro_file, ' use_ros2_control:=', use_ros2_control])
+    robot_description_config = Command(['xacro ', xacro_file, ' use_ros2_control:=', use_ros2_control, ' sim_mode:=', use_sim_time])
 
     # Создаем robot_state_publisher node
     params = {'robot_description': robot_description_config, 'use_sim_time': use_sim_time} # В параметры передаем некую конфигурацию в формате XML и результат присвоения значения use_sim_time

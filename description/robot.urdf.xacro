@@ -3,6 +3,7 @@
     <!-- Вкладка "робот" со строкой сверху - это стандартное описание xacro файла -->
 
     <xacro:arg name="use_ros2_control" default="true"/>
+    <xacro:arg name="sim_mode" default="false"/>
     
     <!-- Включаем описание робота -->
     <xacro:include filename="robot_core.xacro"/>
